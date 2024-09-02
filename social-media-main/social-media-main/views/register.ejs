@@ -1,0 +1,66 @@
+<%- include("parcials/header")%>
+
+<!-- hero -->
+
+
+<div class=" rounded-xl w-[80%] py-[10%] bg-red-200 m-auto  bg-gradient-to-r from-sky-500 to-indigo-500">
+
+  <!-- register content -->
+
+  <h1 class="text-center text-8xl font-extrabold text-yellow-200 drop-shadow-2xl">Register</h1>
+
+  <!-- register content -->
+
+  <!-- register form -->
+  
+  <form action="/regiteruser" method="post" class="w-full  text-center">
+
+    <!-- register inputs  -->
+
+
+    <input class="mt-10 rounded text-2xl p-2 border-solid border-2  border-sky-900" type="text" placeholder="name" name="name"> <br> 
+    
+    <input class="mt-5 mb-5 rounded text-2xl p-2 border-solid border-2  border-sky-900 " type="text" placeholder="Username" name="username"><br>
+
+    
+    <input class=" rounded text-2xl p-2 border-solid border-2  border-sky-900 " type="email" placeholder="email" name="email"><br>
+
+    
+    <input class="mt-5 mb-5 rounded text-2xl p-2 border-solid border-2  border-sky-900" type="password" placeholder="****" name="password"><br>
+<br>
+
+ <!-- register inputs  -->
+
+<!-- register button -->
+
+    <button class="hover:bg-red-600 rounded text py-3 px-5 bg-yellow-300" >Register</button>
+
+    <!-- register button -->
+
+
+  </form>
+
+    <!-- register form -->
+
+    <!-- login link -->
+
+  <p class="mt-8 w-[40%] text-center m-auto">Already have an account? <a class="text-yellow-400" href="/login">login</a>
+  </p>
+
+    <!-- login link -->
+
+    <!-- tamprary unwanted -->
+
+  <!-- <p class="flex justify-center gap-x-5 mt-10 ">
+    <a class="hover:bg-red-600 rounded text py-3 px-5 bg-yellow-300" href="/login">Continue Surfing</a>
+    <a class=" hover:bg-red-600 rounded text py-3 px-5 bg-yellow-300" href="/register">Start Your Journey Today</a>
+
+  </p> -->
+
+   <!-- tamprary unwanted -->
+
+</div>
+
+<!-- hero -->
+
+  <%- include("parcials/footer")%>

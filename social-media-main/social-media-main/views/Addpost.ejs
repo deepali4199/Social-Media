@@ -1,0 +1,55 @@
+<%- include("parcials/header")%>
+
+<!-- hero -->
+
+
+<div class=" rounded-xl w-[80%] py-[5%] bg-red-200 m-auto  bg-gradient-to-r from-sky-500 to-indigo-500">
+
+
+ 
+
+
+  <h1 class="text-center text-8xl font-extrabold text-yellow-200 drop-shadow-2xl">ADD NEW POST</h1>
+
+
+  
+  <form action="/Add_post/" method="post" class="w-full   text-center" enctype="multipart/form-data">
+
+ 
+   <input class="new-image mt-5" type="file" name="media" >  <br>
+
+
+
+    <input class="mt-10 rounded text-2xl p-2 border-solid border-2  border-sky-900" type="text" placeholder="title" name="title" > <br> <br>
+    
+  
+    <button class="hover:bg-red-600 rounded text py-3 px-5 bg-yellow-300" >POST</button>
+
+
+  </form>
+ 
+  
+
+</div>
+
+<!-- js -->
+<!-- 
+<script>
+  const new_image =  document.querySelector(".new-image");
+  const old_image =  document.querySelector(".old-image");
+  const in_image =  document.querySelector(".in-img");
+
+
+  old_image.addEventListener("click" ,()=> {
+    new_image.click();
+  })
+  new_image.addEventListener("change" ,()=> {
+    in_image.submit();
+  })
+
+
+</script> -->
+
+
+<!-- js -->
+  <%- include("parcials/footer")%>

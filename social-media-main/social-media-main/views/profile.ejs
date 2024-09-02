@@ -1,0 +1,81 @@
+<%- include("parcials/header")%>
+
+<!-- hero -->
+
+
+<!-- <div class=" rounded-xl w-[80%] py-[10%] bg-red-200 m-auto  bg-gradient-to-r from-sky-500 to-indigo-500"> -->
+
+
+  <h1 class="text-center text-5xl font-extrabold text-blue-500 drop-shadow-2xl">BRO s<span class="text-yellow-400">a</span>lA</h1>
+
+<!-- PROFILE content -->
+
+
+<div class="rounded-xl w-[80%] pt-[2%]  m-auto flex flex-wrap">
+
+ 
+  <!-- cards  -->
+
+  <% posts.forEach((post)=> { %>
+  <!--  -->
+  <div class="card w-[23%] mr-5 mb-5">
+      <div class="flex items-center mb-2">
+          <img class="w-[7vh] h-[7vh] rounded-full  cursor-pointer object-cover"
+              src="/images/<%= post.user.profileimage %>"
+              alt="">
+          <div class="ml-3 ">
+              <h1 class="text-xl font-bold "><%= post.user.name %></h1>
+              <small class="text-zinc-600"> <%= post.createdAt.toLocaleTimeString()%> |
+                <%= post.createdAt.toLocaleDateString() %></small>
+          </div>
+      </div>
+      <img class="w-full h-[40vh] rounded-xl  cursor-pointer object-cover"
+          src="/images/<%= post.media %>"
+          alt="">
+      <div class="text-xl flex gap-x-2 mt-1">
+
+        <span class="text-xl text-blue-500">
+            <%= post.likes.length  %>
+        </span>
+
+        <a href="/likes/<%= post._id %>">
+        <% if(post.likes.includes(user._id)){%>
+
+
+            <i class="ri-heart-3-fill cursor-pointer text-red-500"></i>
+        <% }else{ %>
+            <i class="ri-heart-3-line cursor-pointer text-red-500"></i>
+       
+       <% } %>
+    </a>
+       
+
+
+         
+          <!-- <i class="ri-chat-3-line cursor-pointer text-blue-500"></i> -->
+      </div>
+  </div>
+  <% }) %>
+  <!--  -->
+
+
+
+</div>
+<!--  -->
+
+<div
+  class=" flex flex-col justify-around items-center rounded-xl fixed right-[2.5%] top-[50%] translate-y-[-50%] w-[3%] h-[80%] py-3  bg-yellow-300 text-2xl text-white">
+  <i class="ri-search-line text-blue-800 cursor-pointer"></i>
+  
+  <a href="/Add_Post" class="w-[2vmax] h-[2vmax]  text-blue-400   cursor-pointer"><i class="ri-add-large-line text-blue-800 cursor-pointer"></i></a>
+  <a href="/update-user/<%= user._id %>" class="w-[2vmax] h-[2vmax]  text-blue-400   cursor-pointer"><img class="object-cover rounded-full" src="/images/<%= user.profileimage %>" alt=""></a>
+</div>
+
+<!-- PROFILE content -->
+
+<!-- </div> -->
+
+
+<!-- hero -->
+
+  <%- include("parcials/footer")%>

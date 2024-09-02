@@ -1,0 +1,88 @@
+<%- include("parcials/header")%>
+
+<!-- hero -->
+
+
+<div class=" rounded-xl w-[80%] py-[3%] bg-red-200 m-auto  bg-gradient-to-r from-sky-500 to-indigo-500">
+
+  <!-- edit page content -->
+
+  <h1 class="text-center text-5xl font-extrabold text-yellow-200 drop-shadow-2xl mb-5">Edit Post</h1>
+
+  <!-- image  -->
+
+
+  <form class="hidden in-img" action="/post-image/<%= post._id %>" method="post" enctype="multipart/form-data">
+    <input class="new-image" type="file" name="media" >  </form>
+    
+
+  <div class="  w-1/2 m-auto mb-10 mt-10  h-[40vh] flex flex-col justify-center  text-center ">
+    <img class="old-image w-[20vw] h-[40vh] rounded  object-cover self-center" src="/images/<%= post.media %>" alt="">
+    <div class="   ">
+      <h2 class=" text-5xl  text-yellow-200 "><%= post.title %></h2>
+
+    </div>
+  </div>
+
+  
+  <!-- image  -->
+
+
+  <!-- edit page content -->
+
+  <!-- edit page form -->
+  
+  <form action="/update-post/<%= post._id %>" method="post" class="w-full  text-center">
+
+    <!-- edit page inputs  -->
+
+
+    <input class="mt-5 rounded text-2xl p-2 border-solid border-2  border-sky-900" type="text" placeholder="title" name="title" value="<%= post.title %>"> <br> 
+  
+
+
+    
+<br>
+
+ <!-- edit page inputs  -->
+
+<!-- edit page button -->
+
+    <button class="hover:bg-red-600 rounded text py-3 px-5 bg-yellow-300" >Update Post</button>
+
+    <!-- edit page button -->
+
+
+  </form>
+
+    <!-- edit page form -->
+
+   
+  
+
+</div>
+
+
+<!-- hero -->
+
+<!-- js -->
+
+<script>
+  const new_image =  document.querySelector(".new-image");
+  const old_image =  document.querySelector(".old-image");
+  const in_image =  document.querySelector(".in-img");
+
+
+  old_image.addEventListener("click" ,()=> {
+    new_image.click();
+  })
+  new_image.addEventListener("change" ,()=> {
+    in_image.submit();
+  })
+
+
+</script>
+
+
+<!-- js -->
+  <%- include("parcials/footer")%>

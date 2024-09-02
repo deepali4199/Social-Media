@@ -1,0 +1,14 @@
+<nav class="w-screen flex gap-x-10 font-semibold justify-center py-5 text-blue-400">
+
+    <% if(user){ %>
+        <a href="/profile">Home</a>
+        <a href="/timeline">Timeline</a>
+
+    <% }else{ %>
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+        
+    <% } %>
+
+<a href="/about">About</a>
+</nav> 

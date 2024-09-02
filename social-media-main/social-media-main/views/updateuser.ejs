@@ -1,0 +1,102 @@
+<%- include("parcials/header")%>
+
+<!-- hero -->
+
+
+<div class=" rounded-xl w-[80%] py-[5%] bg-red-200 m-auto  bg-gradient-to-r from-sky-500 to-indigo-500">
+
+  <!-- edit page content -->
+
+  <!-- image  -->
+
+
+  <form class="hidden in-img" action="/change-image/<%= user._id %>" method="post" enctype="multipart/form-data">
+    <input class="new-image" type="file" name="profileimage" >  </form>
+    
+
+  <div class="  w-1/2 m-auto flex justify-center gap-x-10	 mb-10 h-[10vh] ">
+    <img class="old-image w-[13%] h-full rounded-full bg-yellow-300 object-cover" src="/images/<%= user.profileimage %>" alt="">
+    <div class="   ">
+      <h2 class="text-center text-5xl  text-yellow-200 "><%= user.name%></h2>
+      <h3 class="text-center  text-3xl  text-yellow-200 ">@<%= user.username %></h3>
+    </div>
+  </div>
+
+  
+  <!-- image  -->
+
+
+  <h1 class="text-center text-8xl font-extrabold text-yellow-200 drop-shadow-2xl">Edit Profile</h1>
+
+  <!-- edit page content -->
+
+  <!-- edit page form -->
+  
+  <form action="/edit/<%= user._id %>" method="post" class="w-full  text-center">
+
+    <!-- edit page inputs  -->
+
+
+    <input class="mt-10 rounded text-2xl p-2 border-solid border-2  border-sky-900" type="text" placeholder="name" name="name" value="<%= user.name%>"> <br> 
+    
+    <input class="mt-5 mb-5 rounded text-2xl p-2 border-solid border-2  border-sky-900 " type="text" placeholder="Username" name="username" value="<%= user.username %>"><br>
+
+    
+    <input class=" rounded text-2xl p-2 border-solid border-2  border-sky-900 " type="email" placeholder="email" name="email" value="<%= user.email%>"><br>
+
+    
+<br>
+
+ <!-- edit page inputs  -->
+
+<!-- edit page button -->
+
+    <button class="hover:bg-red-600 rounded text py-3 px-5 bg-yellow-300" >Update Profile</button>
+
+    <!-- edit page button -->
+
+
+  </form>
+
+    <!-- edit page form -->
+
+   
+  
+
+</div>
+
+<div
+  class=" flex flex-col justify-around items-center rounded-xl fixed right-[15%] top-[50%] translate-y-[-50%]   h-[50%] py-3 px-5 border-[2px] border-yellow-500 text-2xl text-white">
+  <a  href="/reset-password/<%= user._id %>"><h4 class="text-yellow-400 text-xl textcursor-pointer">Reset password</h4></a>
+  <a href="/delete-account/<%= user._id %>"><h4 class="text-yellow-400 text-xl cursor-pointer">Delete Accont</h4></a>
+  <a href="/forget"><h4 class="text-yellow-400 text-xl cursor-pointer">Forget</h4></a>
+
+  <a href="/logout"><h4 class="text-yellow-400 text-xl cursor-pointer">Logout</h4></a>
+  <!-- <i class="ri-search-line text-blue-400 cursor-pointer"></i>
+  <i class="ri-add-large-line text-blue-400 cursor-pointer"></i>
+  <a href="/update-user/<%= user._id %>" class="ri-user-fill text-blue-400 cursor-pointer"></a> -->
+</div>
+
+<!-- hero -->
+
+<!-- js -->
+
+<script>
+  const new_image =  document.querySelector(".new-image");
+  const old_image =  document.querySelector(".old-image");
+  const in_image =  document.querySelector(".in-img");
+
+
+  old_image.addEventListener("click" ,()=> {
+    new_image.click();
+  })
+  new_image.addEventListener("change" ,()=> {
+    in_image.submit();
+  })
+
+
+</script>
+
+
+<!-- js -->
+  <%- include("parcials/footer")%>
